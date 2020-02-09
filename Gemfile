@@ -16,6 +16,21 @@ gem 'puma', '~> 3.11'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+# For validating enum attributes in model
+gem 'enum_attributes_validation'
+
+# Searching for i.e Matches
+gem 'searchkick'
+
+# Pagination
+gem 'kaminari'
+
+# Environment variable handler
+gem "figaro"
+
+# Serialization
+gem 'active_model_serializers', '~> 0.10.0'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
@@ -31,6 +46,10 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rspec-rails', '~> 3.8'
+  gem 'faker'
+  gem 'factory_bot_rails'
+  gem 'webmock'
 end
 
 group :development do
