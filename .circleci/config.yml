@@ -6,11 +6,11 @@ jobs:
       - image: circleci/ruby:2.6.0
         environment:
           PGHOST: localhost
-          PGUSER: sporavarim-backend-rubyonrails_development
+          PGUSER: bekirinan
           RAILS_ENV: test
-      - image: postgres:11.5
+      - image: postgres:11
         environment:
-          POSTGRES_USER:  sporavarim-backend-rubyonrails_development
+          POSTGRES_USER:  bekirinan
           POSTGRES_DB:  sporavarim-backend-rubyonrails_test
           POSTGRES_PASSWORD:  ""
       - image: docker.elastic.co/elasticsearch/elasticsearch:7.5.2
