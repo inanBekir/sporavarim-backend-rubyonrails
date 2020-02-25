@@ -36,8 +36,12 @@ end
   def user_params
     params.permit(
       :name,
+      :surname,
+      :username,
       :email,
-      :password
+      :password,
+      :user_type,
+      :last_login_date
     )
   end
 end
