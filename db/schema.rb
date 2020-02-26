@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_25_075618) do
+ActiveRecord::Schema.define(version: 2020_02_26_071305) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,31 @@ ActiveRecord::Schema.define(version: 2020_02_25_075618) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "facility_images", force: :cascade do |t|
+    t.bigint "facility_id"
+    t.string "path"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["facility_id"], name: "index_facility_images_on_facility_id"
+  end
+
+  create_table "field_images", force: :cascade do |t|
+    t.bigint "field_id"
+    t.string "path"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["field_id"], name: "index_field_images_on_field_id"
+  end
+
+  create_table "fields", force: :cascade do |t|
+    t.bigint "facility_id"
+    t.string "name"
+    t.integer "type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["facility_id"], name: "index_fields_on_facility_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "surname"
@@ -40,4 +65,7 @@ ActiveRecord::Schema.define(version: 2020_02_25_075618) do
     t.datetime "last_login_date"
   end
 
+  add_foreign_key "facility_images", "facilities"
+  add_foreign_key "field_images", "fields"
+  add_foreign_key "fields", "facilities"
 end
