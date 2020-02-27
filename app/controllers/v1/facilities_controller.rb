@@ -1,4 +1,5 @@
 class V1::FacilitiesController < ApplicationController
+    before_action :authenticate_request
 
     def index
         begin
@@ -56,7 +57,8 @@ class V1::FacilitiesController < ApplicationController
         :full_adress,
         :district,
         :city,
-        :type
+        :facility_type,
+        :user_id
         )
      end
 end

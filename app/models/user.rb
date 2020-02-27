@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+    has_many :facility
     #Validations
    validates_presence_of :name ,:surname,:username, :email, :password_digest
    validates :email, uniqueness: true

@@ -3,7 +3,7 @@ class CreateFacilities < ActiveRecord::Migration[5.2]
     create_table :facilities do |t|
       t.string :name
       t.float :latitude
-      t.string :longitude
+      t.float :longitude
       t.string :full_adress
       t.string :district
       t.string :city
